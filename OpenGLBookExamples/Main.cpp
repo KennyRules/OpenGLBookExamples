@@ -41,71 +41,27 @@ private:
 
     GLuint compile_shaders(void)
     {
-        GLuint vertex_shader;
-        GLuint tess_control_shader;
-		GLuint tess_eval_shader;
-		GLuint geom_shader;
-		GLuint fragment_shader;
         GLuint program;
 
 		int result = 0;
-        /*
-        vertex_shader = glCreateShader(GL_VERTEX_SHADER);
-		static GLchar * vertex_shader_source[] = { "" };
-		result = ShaderLoader::loadShader("VertexShader.vert", vertex_shader_source);
-		glShaderSource(vertex_shader, 1, vertex_shader_source, NULL);
-        glCompileShader(vertex_shader);
-        */
 
-        Shader vertShader(GL_VERTEX_SHADER, "VertexShader.vert");
-
-		float shaderType = GL_TESS_CONTROL_SHADER;
-		tess_control_shader = glCreateShader(GL_TESS_CONTROL_SHADER);
-		static GLchar * tess_control_source[] = { "" };
-		result = ShaderLoader::loadShader("TessControlShader.glsl", tess_control_source);
-		glShaderSource(tess_control_shader, 1, tess_control_source, NULL);
-		glCompileShader(tess_control_shader);
-
-		tess_eval_shader = glCreateShader(GL_TESS_EVALUATION_SHADER);
-		static GLchar * tess_eval_source[] = { "" };
-		result = ShaderLoader::loadShader("TessEvalShader.glsl", tess_eval_source);
-		glShaderSource(tess_eval_shader, 1, tess_eval_source, NULL);
-		glCompileShader(tess_eval_shader);
-
-		geom_shader = glCreateShader(GL_GEOMETRY_SHADER);
-		static GLchar* geom_shader_source[] = { "" };
-		result = ShaderLoader::loadShader("GeomShader.glsl", geom_shader_source);
-		glShaderSource(geom_shader, 1, geom_shader_source, NULL);
-		glCompileShader(geom_shader);
-
-        fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
-		static GLchar * fragment_shader_source[] = { "" };
-		result = ShaderLoader::loadShader("FragmentShader.frag", fragment_shader_source);
-        glShaderSource(fragment_shader, 1, fragment_shader_source, NULL);
-        glCompileShader(fragment_shader);
+        Shader vertexShader(GL_VERTEX_SHADER, "VertexShader.vert");
+        Shader tessControlShader(GL_TESS_CONTROL_SHADER, "TessControlShader.glsl");
+        Shader tessEvalShader(GL_TESS_EVALUATION_SHADER, "TessEvalShader.glsl");
+        Shader geomShader(GL_GEOMETRY_SHADER, "GeomShader.glsl");
+        Shader fragmentShader(GL_FRAGMENT_SHADER, "FragmentShader.frag");
 
         program = glCreateProgram();
         
-		glAttachShader(program, vertShader.getShader());
-		glAttachShader(program, tess_control_shader);
-		glAttachShader(program, tess_eval_shader);
-		glAttachShader(program, geom_shader);
-		glAttachShader(program, fragment_shader);
+		glAttachShader(program, vertexShader.getShader());
+		glAttachShader(program, tessControlShader.getShader());
+		glAttachShader(program, tessEvalShader.getShader());
+		glAttachShader(program, geomShader.getShader());
+		glAttachShader(program, fragmentShader.getShader());
 		
         glLinkProgram(program);
 
-        //glDeleteShader(vertex_shader);
-		//ShaderLoader::unloadShader(vertex_shader_source);
-		glDeleteShader(tess_control_shader);
-		ShaderLoader::unloadShader(tess_control_source);
-		glDeleteShader(tess_eval_shader);
-		ShaderLoader::unloadShader(tess_eval_source);
-		glDeleteShader(geom_shader);
-		ShaderLoader::unloadShader(geom_shader_source);
-        glDeleteShader(fragment_shader);
-		ShaderLoader::unloadShader(fragment_shader_source);
-
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		glPointSize(5.0f);
         return program;
     }
