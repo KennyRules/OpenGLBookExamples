@@ -13,7 +13,7 @@ private:
     const char* shaderFileName;
 
 public:
-    Shader(GLuint aShaderType, GLchar* aFileName) :
+    Shader(GLuint aShaderType, const GLchar* aFileName) :
         shaderType(aShaderType), shaderFileName(aFileName)
     {
         GLchar* shaderSource[] = { "" };
