@@ -6,22 +6,22 @@
 #include <fstream>
 #include <memory>
 
-class ShaderLoader
+class ShaderFileLoader
 {
 public:
-	static int loadShader(const char* filename, GLchar** shaderSource)
+	static int loadShaderFile(const char* filename, GLchar** shaderSource)
 	{
 		std::ifstream file;
 		file.open(filename, std::ios::in);
 		if (!file) 
 			return -1;
 
-		unsigned long length = getFileLength(file);
+		long long length = getFileLength(file);
 
 		if (length == 0)
 			return -2;  // Error: Empty file.
 
-		GLchar* array = new GLchar[length + 1];
+		GLchar* array = new GLchar[(unsigned int)length + 1];
 		if (*array == 0)
 			return -3; // Can't reserve memory.
 
@@ -54,13 +54,13 @@ public:
 	}
 
 private:
-	static unsigned long getFileLength(std::ifstream& file)
+	static long long getFileLength(std::ifstream& file)
 	{
 		if (!file.good()) return 0;
 	
-		unsigned long pos = file.tellg();
+		std::streamoff pos = file.tellg();
 		file.seekg(0, std::ios::end);
-		unsigned long length = file.tellg();
+        std::streamoff length = file.tellg();
 		file.seekg(std::ios::beg);
 
 		return length;

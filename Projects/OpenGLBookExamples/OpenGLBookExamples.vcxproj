@@ -74,11 +74,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\DrewD\Documents\Visual Studio 2015\Projects\OpenGLBookExamples\OpenGLBookExamples\include;C:\Users\DrewD\Documents\Visual Studio 2015\Projects\OpenGLBookExamples\OpenGLBookExamples\extern\glfw-3.0.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\DrewD\Documents\Visual Studio 2015\Projects\OpenGLBookExamples\include;C:\Users\DrewD\Documents\Visual Studio 2015\Projects\OpenGLBookExamples\extern\glfw-3.0.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>lib\sb7_d.lib;lib\glfw3_d.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sb7_d.lib;glfw3_d.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\DrewD\Documents\Visual Studio 2015\Projects\OpenGLBookExamples\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -98,13 +99,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\DrewD\Documents\Visual Studio 2015\Projects\OpenGLBookExamples\OpenGLBookExamples\include;C:\Users\DrewD\Documents\Visual Studio 2015\Projects\OpenGLBookExamples\OpenGLBookExamples\extern\glfw-3.0.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\DrewD\Documents\Visual Studio 2015\Projects\OpenGLBookExamples\include;C:\Users\DrewD\Documents\Visual Studio 2015\Projects\OpenGLBookExamples\extern\glfw-3.0.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>lib\sb7.lib;glfw3.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sb7.lib;glfw3.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\DrewD\Documents\Visual Studio 2015\Projects\OpenGLBookExamples\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

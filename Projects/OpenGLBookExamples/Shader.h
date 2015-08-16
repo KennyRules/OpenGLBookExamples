@@ -1,6 +1,6 @@
 #pragma once
 
-#include <memory>
+#include <iostream>
 
 #include "sb7.h"
 #include "ShaderLoader.h"
@@ -19,9 +19,15 @@ public:
         GLchar* shaderSource[] = { "" };
      
         shader = glCreateShader(shaderType);
-        ShaderLoader::loadShader(shaderFileName, shaderSource);
+        ShaderFileLoader::loadShaderFile(shaderFileName, shaderSource);
         glShaderSource(shader, 1, shaderSource, NULL);
         glCompileShader(shader);
+
+        GLint isCompiled = 0;
+        glGetShaderiv(shader, GL_COMPILE_STATUS, &isCompiled);
+        if (isCompiled == GL_FALSE) {
+            std::cout << "Error compiling shader " << aFileName;
+        }
 
         if (*shaderSource != nullptr)
             delete[] * shaderSource;

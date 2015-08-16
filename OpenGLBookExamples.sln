@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenGLBookExamples", "OpenGLBookExamples\OpenGLBookExamples.vcxproj", "{964E01E2-EE1C-4CD1-A587-E5802086519A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenGLBookExamples", "Projects\OpenGLBookExamples\OpenGLBookExamples.vcxproj", "{964E01E2-EE1C-4CD1-A587-E5802086519A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpinningCubes", "Projects\SpinningCubes\SpinningCubes.vcxproj", "{D21C96F1-E15D-4609-97C4-B4F528D04C15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{964E01E2-EE1C-4CD1-A587-E5802086519A}.Release|x64.Build.0 = Release|x64
 		{964E01E2-EE1C-4CD1-A587-E5802086519A}.Release|x86.ActiveCfg = Release|Win32
 		{964E01E2-EE1C-4CD1-A587-E5802086519A}.Release|x86.Build.0 = Release|Win32
+		{D21C96F1-E15D-4609-97C4-B4F528D04C15}.Debug|x64.ActiveCfg = Debug|x64
+		{D21C96F1-E15D-4609-97C4-B4F528D04C15}.Debug|x64.Build.0 = Debug|x64
+		{D21C96F1-E15D-4609-97C4-B4F528D04C15}.Debug|x86.ActiveCfg = Debug|Win32
+		{D21C96F1-E15D-4609-97C4-B4F528D04C15}.Debug|x86.Build.0 = Debug|Win32
+		{D21C96F1-E15D-4609-97C4-B4F528D04C15}.Release|x64.ActiveCfg = Release|x64
+		{D21C96F1-E15D-4609-97C4-B4F528D04C15}.Release|x64.Build.0 = Release|x64
+		{D21C96F1-E15D-4609-97C4-B4F528D04C15}.Release|x86.ActiveCfg = Release|Win32
+		{D21C96F1-E15D-4609-97C4-B4F528D04C15}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
