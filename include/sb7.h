@@ -339,6 +339,15 @@ int CALLBACK WinMain(HINSTANCE hInstance,           \
     delete app;                                     \
     return 0;                                       \
 }
+#define DECLARE_CONSOLE_MAIN(a)                     \
+sb7::application *app = 0;                          \
+int main()                                          \
+{                                                   \
+    a *app = new a;                                 \
+    app->run(app);                                  \
+    delete app;                                     \
+    return 0;                                       \
+}
 #elif defined _LINUX || defined __APPLE__
 #define DECLARE_MAIN(a)                             \
 int main(int argc, const char ** argv)              \

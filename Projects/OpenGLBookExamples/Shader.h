@@ -26,7 +26,9 @@ public:
         GLint isCompiled = 0;
         glGetShaderiv(shader, GL_COMPILE_STATUS, &isCompiled);
         if (isCompiled == GL_FALSE) {
-            std::cout << "Error compiling shader " << aFileName;
+            std::cout << "Error opening shader file '" << aFileName << "'" << std::endl;
+            std::cin.get();
+            exit(EXIT_FAILURE);
         }
 
         if (*shaderSource != nullptr)
